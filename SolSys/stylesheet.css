@@ -1,0 +1,170 @@
+body {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,23538a+100 */
+        background: rgb(0,0,0); /* Old browsers */
+        background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(35,83,138,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(35,83,138,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(35,83,138,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */
+        }
+        
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Risque" rel="stylesheet">
+        
+
+        {
+          font-size: 100%;
+          margin: 0px;
+        }
+        body, html {
+            font-family: 'Risque', cursive;
+            height: 100%;
+            margin: 0px;
+            overflow: auto;
+        }
+
+        .nav {
+            background-color: #1b468e;
+            margin: 20px;
+            font-family: 'Risque', cursive;
+        }
+        #nav ul li{
+            
+            float: left;
+        }
+        #nav {
+            overflow: hidden;
+        }
+        #nav ul li a {
+            display: block;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0;
+        }
+        #nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            width: 50em;
+        }
+       #intro {
+        font-family: 'Risque', cursive;
+        font-size: 1.2em;
+        color: ghostwhite;
+        text-align: center;
+        clear: both;
+        height: 2.5em;
+        background-image: url(pics/namebackground.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0px 20px;
+        }
+        #nav ul a:link {
+            color: #fff;
+        }
+        #nav ul a:visited {
+            color: #fff;
+        }
+        #nav ul a:focus {
+            color:#9f0
+        }
+        #nav ul a:hover {
+            color: #9f0;
+        }
+        #nav ul a:active {
+            color:#f00;
+        }
+
+p {
+    font-family: 'Risque', cursive;
+    color: ghostwhite;
+    margin: 50px;
+    text-align: left;
+    font-size: 120%;
+    }
+
+h2 { 
+    text-align: center;
+    color: ghostwhite;
+    font-family: 'Risque', cursive;
+    }
+
+h1 { 
+    color: ghostwhite;
+    font-family: 'Risque', cursive;
+    text-align: center;
+}
+
+.bg {
+    
+    margin: 20px;
+}
+.table {
+    text-align: center;
+    color: ghostwhite;
+    margin:50px;
+}
+div.container {
+    font-family: 'Risque', cursive;
+    width: 50%;
+    background-color: #2969d1;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: ghostwhite;
+    float: left;
+    }
+div.header {
+    width: 100%;
+    text-align: center;
+    margin: 60px 0px 0px;
+    font-size: 50px;
+}
+div.left{
+    margin: 0px 20px;
+    padding: 15px;
+    word-spacing: normal;
+    float: left;
+   }
+div.media {
+    width: 39%;
+    border-radius: 10px;
+    margin: 75px 20px;
+    float: left;
+    overflow: hidden;
+    }
+div.survey {
+    width: 39%;
+    float: left;
+}
+.sun {
+    height: 25px;
+    background-image: url(pics/sun.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px;
+}
+#intro {
+    font-family: 'Risque', cursive;
+}
+div.containersurv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 520px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5;
+    border-radius: 10px;
+    
+}
+div.surveypic1 {
+    position: absolute;
+    top: 5px;
+    right: 35px;
+}
+img {
+    display: block;
+    margin: auto;
+}

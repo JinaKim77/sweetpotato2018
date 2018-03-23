@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cosmic Survey</title>
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        <meta charset="UTF-8">
+            <style>
+                .bg {
+                    background-image: url("pics/starsbackground.png");
+                    height: 100%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    }
+                form{
+                    margin: 25px;
+                    color: darkblue;
+                    }
+            </style>   
+    </head>
+    <body>
+        <h1>Great Cosmic Survey</h1>
+    <div class="bg"></div>
+    <div class="containersurv">
+        <form action="http://cosmos.com/join.php">
+                First name:<br>
+                <input type="text" value="">
+                <br>
+                Last name:<br>
+                <input type="text" name="lastname" value="">
+                <br>
+                <input type="radio" name="gender" value="male" checked> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="other"> Alien
+                <br><br>
+                
+                Pick Your Favourite Planets<br>
+                <input type="checkbox" name="planet" value=""/> Mercury<br>
+                <input type="checkbox" name="planet" value=""/> Venus<br>
+                <input type="checkbox" name="planet" value=""/> Earth<br>
+                <input type="checkbox" name="planet" value=""/> Mars<br>
+                <input type="checkbox" name="planet" value=""/> Jupiter<br>
+                <input type="checkbox" name="planet" value=""/> Saturn<br>
+                <input type="checkbox" name="planet" value=""/> Uranus<br>
+                <input type="checkbox" name="planet" value=""/> Neptune<br><br>
+                <input type="submit" value="Submit">
+                <br>
+            </form>
+        </div>
+    </body>
+</html>    
