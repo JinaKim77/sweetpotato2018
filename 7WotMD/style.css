@@ -1,0 +1,126 @@
+
+/* Main */
+
+body {
+	background-color: #f2efd0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	font-weight: bold;
+	font-family: 'Ranga', cursive;
+}
+h1 {
+	font-family: 'Sedgwick Ave Display', cursive;
+	text-align: center;
+	font-size: 4em;
+	background-image: url("pictures/worldwonders.jpg");
+	border-bottom: 5px groove red;
+	padding-bottom: 3%;
+	color: red;
+	-webkit-text-stroke: 1.0px black;
+	margin-bottom: 5px;
+}
+h3 {
+	font-family: 'Sedgwick Ave Display', cursive;
+	font-size: 2em;
+	text-align: center;
+	color: red;
+	-webkit-text-stroke: 1.0px black;
+}
+p {
+	font-size: 1.5em;
+	text-align: center;
+	margin: auto;
+	width: 65%;
+}
+ul {
+	float: left;
+	font-size: 1.2em;
+	padding-right: 7px;
+}
+#list1 {
+	border-right: none;
+	margin-left: 38%;
+}
+#padding {
+	margin-top: 200px;
+}
+#wonders a {
+	margin: 25px 35px 25px 35px;
+}
+#fistlinks {
+	margin-top: 70px;
+}
+#lastlinks {
+	margin-bottom: 100px;
+}
+#wonders img:hover {
+	border: 2px solid red;
+	border-radius: 0.5em;
+}
+
+
+
+/* Side Pages */
+
+img {
+	border: 1px solid black;
+	margin-top: 50px;
+}
+#secondary {
+	text-align: center;
+}
+iframe {
+	margin-top: 50px;
+}
+
+
+
+/* Navigation Bar */
+
+#horizontal{
+	list-style-type: none;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	background-color: #ffbfbf;
+	width: 99%;
+	padding: 10px;
+	text-align: center;
+}
+#horizontal li {
+	display: inline;
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 0.5em;
+	font-size: 1.3em;
+	letter-spacing: 0.5px;
+}
+#horizontal li a:link {
+	color: #5b0000;
+	padding: 7px;
+	text-decoration: none;
+}
+#horizontal li a:visited {
+	color: #ff8282;
+}
+#horizontal li:hover {
+	background-color: #cce4ff;
+}
+.current {
+	background-color: #cce4ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
