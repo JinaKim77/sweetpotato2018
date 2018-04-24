@@ -6,8 +6,136 @@ background: -moz-linear-gradient(-45deg, #a90329 0%, #8f0222 44%, #6d0019 100%);
 background: -webkit-linear-gradient(-45deg, #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(135deg, #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	
-	
-	
-	
+background-color: brown;
 }
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+border: 1px solid #e7e7e7;
+background-color: darkbrown;
+}
+
+h1.font{
+font-family: "Times New Roman", Times, serif;
+}
+
+li {
+float: left;
+}
+
+p.apple {
+font: italic bold 15px/30px Georgia, serif;
+font-size: 25px;
+}
+
+li a {
+display: block;
+color: ivory;
+text-align: center;
+padding: 12px 14px;
+text-decoration: none;
+}
+
+li a:hover:not(.active) {
+background-color: #ddd;
+}
+
+li a.active {
+color: white;
+background-color: #4CAF50;
+}
+
+h1 {
+border: 5px solid brown;
+margin: auto;    
+padding: 15px;
+text-align: center;
+}
+
+h2 {
+margin: auto;    
+padding: 15px;
+text-align: center;
+}
+h3{
+margin: auto;    
+padding: 15px;
+text-align: center;
+}
+
+div.a {
+font-size: 15px;
+}
+
+.carousel-inner {
+width: 900px;
+height: 500px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#login, #user {
+float: right;
+}
+
+#options {
+float: left;
+margin-left: 150px;
+border: 3px solid #4CAF50;
+padding: 5px;
+}
+
+ul#account {
+border: none;
+color: ivory;
+}
+
+ul#account li {
+text-decoration: underline;
+}
+
+#backButton {
+position: fixed;
+bottom: 0;
+color: #9dbae8;
+margin-bottom: 10px;
+margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

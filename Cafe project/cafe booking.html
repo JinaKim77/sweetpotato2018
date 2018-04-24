@@ -1,54 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>*Name* Cafe - Booking</title>
-		<style>
-			body {background-color: brown;}
+		<!-- General Bootstrap tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		
-			ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-			border: 1px solid #e7e7e7;
-			background-color: darkbrown;
-			}
-			
-			li {
-			float: left;
-			}
-			
-			
-			li a {
-			display: block;
-			color: ivory;
-			text-align: center;
-			padding: 12px 14px;
-			text-decoration: none;
-			}
-
-			li a:hover:not(.active) {
-			background-color: #ddd;
-			}
-
-			li a.active {
-			color: white;
-			background-color: #4CAF50;
-			}
-			h1 {
-			border: 5px solid brown;
-			margin: auto;    
-			padding: 15px;
-			text-align: center;
-			}
-			
-			h2 {
-			margin: auto;    
-			padding: 15px;
-			text-align: center;
-			}
-		
-		</style>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+		<title>Booking - JJA Cafe</title>
 	</head>
 	<body>
 		<ul>
@@ -56,14 +15,21 @@
 		<li><a href="cafe booking.html">Cafe Booking</a></li>
 		<li><a href="cafe shop.html">Cafe Shop</a></li>
 		<li><a href="cafe index.html">Opening Hours</a></li>
+		<li id="user"><a href="cafe user.html">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
+		<li id="login"><a href="">Log In</a></li>
 		</ul>
-		<img src="pics/coffeebean.png" | height=300px>
+		<img src="pics/love coffee.jpg" height="300px">
 		<h1>Make a free reservation</h1>
 		<h3>Please select your preferred time and book here to complete your booking. For parties of 6 or more please call us directly on 123456789  Our reservation line is open between 2pm and 6pm Tuesday to Saturday.
 
 		Thank you and we look forward to seeing you soon.</h3>
 		
-		<a href="cafe index.html">[Back to the home page]</a>
+		<a id="backButton" href="cafe index.html">[Back to the home page]</a>
+		
+		<!-- Bootstrap tags -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</body>
 </html>
 
