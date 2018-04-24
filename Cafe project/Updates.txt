@@ -1,6 +1,6 @@
 -Introduced Bootstrap
 -Made a carousel in index
 -Messed around with some css
--Created Log In and Used buttons along with a new Cafe user page to display
+-Created Log In and User buttons along with a new Cafe user page to display
  user account details with options to change details
 //Jakub
