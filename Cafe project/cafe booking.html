@@ -16,15 +16,31 @@
 		<li><a href="cafe shop.html">Cafe Shop</a></li>
 		<li><a href="cafe index.html">Opening Hours</a></li>
 		<li id="user"><a href="cafe user.html">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
-		<li id="login"><a href="">Log In</a></li>
+		<li id="login"><button class="logInLink"><a href="">Log In</a></button></li>
 		</ul>
-		<img src="pics/love coffee.jpg" height="300px">
-		<h1>Make a free reservation</h1>
-		<h3>Please select your preferred time and book here to complete your booking. For parties of 6 or more please call us directly on 123456789  Our reservation line is open between 2pm and 6pm Tuesday to Saturday.
+		
+		<img id="image" src="pics/love coffee.jpg" height="300px">
+		
+		<h1 id="topMargin">Make a free reservation</h1>
+		<h3 class="apple">Please select your preferred time and book here to complete your booking. For parties of 6 or more please call us directly on 123456789  Our reservation line is open between 2pm and 6pm Tuesday to Saturday.
 
 		Thank you and we look forward to seeing you soon.</h3>
 		
-		<a id="backButton" href="cafe index.html">[Back to the home page]</a>
+		<div class="bookingForm">
+			<span class="heading">BOOKING DETAILS</span>
+			<form class="bookingDetails">
+				<span class="infoTag">Time*</span><input type="time" id="time" required> <br>
+				<span class="infoTag">Date*</span><input type="date" id="date" oninput="validDate(date)" required> <br>
+				<span class="infoTag">Contact Name*</span><input type="text" placeholder="John Smith" id="name" required> <br>
+				<span class="infoTag">Contact Number*</span><input type="text" placeholder="123456789" id="phNumber" required> <br>
+				<span class="infoTag">Number of Guests*</span><input type="number" placeholder="4" id="guests" required> <br>
+				<button type="button" id="submit" onclick="saveDetails()">Submit</button>
+			</form>
+		</div>
+		
+		<p id="message"></p>
+		
+		<a id="backButton" href="cafe index.html">[Back to home page]</a>
 		
 		<!-- Bootstrap tags -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -34,5 +50,78 @@
 </html>
 
 <script>
+	function saveDetails() {
+		if(document.getElementById("guests").value > 5) {
+			document.getElementById("message").innerHTML = "For 6 or more guests please call us directly at 123456789. Thank you";
+			document.getElementById("message").style.color = 'red';
+		}else if (document.getElementById("guests").value < 1) {
+			document.getElementById("message").innerHTML = "You need to book a place for at least one person";
+			document.getElementById("message").style.color = 'red';
+		}else {
+			localStorage.userBookingTime = document.getElementById("time").value;
+			localStorage.userBookingDate = document.getElementById("date").value;
+			localStorage.userBookingName = document.getElementById("name").value;
+			localStorage.userBookingPhoneNumber = document.getElementById("phNumber").value;
+			localStorage.userBookingGuests = document.getElementById("guests").value;
+			document.getElementById("message").innerHTML = "Booking successful. See you later ;)";
+			document.getElementById("message").style.color = '#008e1e';
+		}
+	}
 	
+	function validDate(date) {
+    todayDate = getTodaysDate();
+    if (date < todayDate)
+        document.getElementById("message").innerHTML = "Invalid date. You can't book for the past";
+		document.getElementById("message").style.color = 'red';
+	}
+
+	function getTodaysDate() {
+		date = new Date();
+		day = date.getDate();
+		month = date.getMonth() + 1;
+		year = date.getFullYear();
+
+		if (month < 10) month = "0" + month;
+		if (day < 10) day = "0" + day;
+
+		today = year + "-" + month + "-" + day; 
+
+		return today;
+	}
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
