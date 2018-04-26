@@ -1,0 +1,9 @@
+-Introduced Bootstrap
+-Made a carousel in index
+-Messed around with some css
+-Created Log In and User buttons along with a new Cafe user page to display
+ user account details with options to change details
+
+-Made a form for booking details in Cafe booking. Still need some validating and can be changed, just let me know
+-Played some more with css
+//Jakub
