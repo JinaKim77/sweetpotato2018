@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        <title>Register - JJA Cafe</title>
+	</head>
+	<body>
+        <div class="registerForm">
+            <span class="headingReg">Register</span>
+            <form class="registerDetails">
+                <span class="label">Username</span><br><input type="text" placeholder="Username" id="name" maxlength="20" required>
+                <span class="msg" id="usernameMessage"></span> <br>
+                
+                <span class="label">Email</span><br><input type="email" placeholder="sample@sample.ie" id="email" required> 
+                <span class="msg" id="emailMessage"></span> <br>
+
+                <span class="label">Password</span><br><input type="password" id="pass" required>
+                <span class="msg" id="passMessage"></span> <br>
+                
+                <span class="label">Repeat Password</span><br><input type="password" id="passRepeat" required>
+                <span class="msg" id="pass2Message"></span> <br>
+                
+                <button type="button" class="submitReg" onclick="register()" id="btnLink">Create Account</button>
+            </form>
+        </div>
+	</body>
+</html>
+
+<script>
+    function register() {
+        var username = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("pass").value;
+        var passRepeat = document.getElementById("passRepeat").value;
+
+        usernameValidate(username);
+        emailValidate(email);
+        passwordValidate(password);
+        matchingPass(password, passRepeat);
+
+        if(emailValidate(email) == true && usernameValidate(username) == true && passwordValidate(password) == true && matchingPass(password, passRepeat) == true) {
+            localStorage.regUsername = username;
+            localStorage.regEmail = email;
+            localStorage.regPassword = password;
+
+            alert("Thank you for signing up. You may now log in.");
+
+            window.location='cafe index.html';
+        }
+    }
+
+	function usernameValidate(username) {
+        if(username == "") {
+            document.getElementById("usernameMessage").innerHTML = "Please enter username";
+            document.getElementById("usernameMessage").style.color = 'red';
+        }else {
+            return true;
+        }
+    }
+
+    function emailValidate(email) {
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if(email == "") {
+            document.getElementById("emailMessage").innerHTML = "Please enter email";
+            document.getElementById("emailMessage").style.color = 'red';
+        }else if(!filter.test(email)) {
+            document.getElementById("emailMessage").innerHTML = "Please enter a valid email";
+            document.getElementById("emailMessage").style.color = 'red';
+        }else {
+            return true;
+        }
+    }
+
+    function passwordValidate(password) {
+        if(password == "") {
+            document.getElementById("passMessage").innerHTML = "Please enter password";
+            document.getElementById("passMessage").style.color = 'red';
+        }else {
+            return true;
+        }
+    }
+
+    function matchingPass(password, repeatPass) {
+        if(password != repeatPass) {
+            document.getElementById("pass2Message").innerHTML = "Your passwords don't match";
+            document.getElementById("pass2Message").style.color = 'red';
+        }else {
+            document.getElementById("pass2Message").innerHTML = "";
+            return true;
+        }
+    }
+</script>
