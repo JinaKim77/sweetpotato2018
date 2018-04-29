@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- General Bootstrap tags - ignore them, just use regular stylehseet. They have to be here for BS to work-->
+		<!-- General Bootstrap tags - ignore them, just use regular stylesheet. They have to be here for BS to work-->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -10,36 +10,124 @@
 		<title>Home - JJA Cafe</title>
 	</head>
 	<body>
-		<ul>
-			<li><a class="active" href="cafe index.html">Home</a></li>
-			<li><a href="cafe booking.html">Cafe Booking</a></li>
-			<li><a href="cafe shop.html">Buy Coffee From Us</a></li>
-			<li><a href="cafe index.html">Opening hours</a></li>
-			<li id="user"><a href="cafe user.html">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
-			<li id="login"><button class="logInLink"><a href="">Log In</a></button></li>
+		<img src="pics/logo.gif" alt="logo" class="logo">
+		<ul class="navBar">
+			<li><a class="btn active" href="cafe index.html">Home</a></li>
+			<li><a href="cafe booking.html" class="btn">Cafe Booking</a></li>
+			<li><a href="cafe shop.html" class="btn">Cafe Shop</a></li>
+			<li><a href="cafe index.html" class="btn">Opening Hours</a></li>
+			<li id="user"><a href="cafe user.html" class="btn">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
+			<li id="login"><a href="" class="btn" data-toggle="modal" data-target="#modalLRForm">Log In</a></li>
 		</ul>
 		
-		
-		<h1 class="font">JJA Cafe</h1>
-		<!-- <img src="pics/coffeebean.png" alt="coffeebean.png" width="700" height="500"> -->
-		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="4000">
-		  <div class="carousel-inner">
-			<div class="carousel-item active">
-			  <img class="d-block w-100" src="pics/art-blur-cappuccino-302899.jpg" alt="First slide">
-			</div>
-			<div class="carousel-item">
-			  <img class="d-block w-100" src="pics/apple-device-blur-blurry-273222.jpg" alt="Second slide">
-			</div>
-			<div class="carousel-item">
-			  <img class="d-block w-100" src="pics/background-board-close-up-888992.jpg" alt="Third slide">
-			</div>
-		  </div>
-		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active logInTab" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i> Register</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body mb-1">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="modalLRInput10" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your username</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+                            </div>
+                            <div class="text-center mt-2">
+                                <button class="btn btn-info" onclick="login()">Log in <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                <p>Not a member? <a href="#panel8" class="blue-text">Sign Up</a></p>
+                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                            </div>
+							
+							<div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="modalLRInput102" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput102">Your username</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                                <button class="btn btn-info" onclick="register()">Sign up <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-right">
+                                <p class="pt-1">Already have an account? <a href="#panel7" class="blue-text">Log In</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
 		
 		<br>
 		<br>
 		
-		<p class="apple">We’re just normal folk who love great coffee. So much so that we decided to open up our own roastery and start roasting our own coffee here in GMIT, Galway campus! What makes us different is the fact that we are a micro roastery and we hand roast all our coffee with our very own hands. Being a mirco roastery also means we can provide you with the best personal service that will be tailored to you or your busines</p>
+		<p class="apple" id="firstPara">We’re just normal folk who love great coffee. So much so that we decided to open up our own roastery and start roasting our own coffee here in GMIT, Galway campus! What makes us different is the fact that we are a micro roastery and we hand roast all our coffee with our very own hands. Being a mirco roastery also means we can provide you with the best personal service that will be tailored to you or your busines</p>
 		<h1>Open Your Mind</h1>
 		<br>
 		<div class="openingHrs">
@@ -53,7 +141,6 @@
 		<br>
 		<h1>GREAT COFFEE, GOOD VIBRATIONS</h1>
 		<br>
-		<!-- <img src="pics/love coffee.jpg" alt="love coffee" width="300" height="200"> -->
 		<br>
 		<p class="apple">Featuring a varied selection of the best single origin espresso coffee, we are proudly stocked by Full Circle – the best local coffee roasters.
 
@@ -65,7 +152,6 @@
 		<br>
 		<br>
 		<br>
-		<!-- <img src="1234.jpg" alt="coffee pics" width="1260" height="150"> -->
 		
 		<!-- Bootstrap tags -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -75,5 +161,48 @@
 </html>
 
 <script>
-	
+	function register() {
+		localStorage.regEmail = document.getElementById("modalLRInput12").value;
+		localStorage.regUsername = document.getElementById("modalLRInput102").value;
+		localStorage.regPassword = document.getElementById("modalLRInput13").value;
+	}
+
+    function login() {
+        if(localStorage.getItem("regUsername") != document.getElementById("modalLRInput10").value) {
+            alert("WRONG!!");
+        }
+    }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
