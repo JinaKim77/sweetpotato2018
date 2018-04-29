@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- General Bootstrap tags - ignore them, just use regular stylesheet. They have to be here for BS to work-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+		<title>Home - JJA Cafe</title>
+	</head>
+	<body>
+		<img src="pics/logo.gif" alt="logo" class="logo">
+		<ul class="navBar">
+			<li><a class="btn active" href="cafe index.html">Home</a></li>
+			<li><a href="cafe booking.html" class="btn">Cafe Booking</a></li>
+			<li><a href="cafe shop.html" class="btn">Cafe Shop</a></li>
+			<li><a href="cafe index.html" class="btn">Opening Hours</a></li>
+			<li id="user"><a href="cafe user.html" class="btn" id="newName">User</a></li>
+			<li id="login"><a href="" class="btn" data-toggle="modal" data-target="#modalLoginForm">Log In</a></li>
+		</ul>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                            <input type="email" id="defaultForm-email" class="form-control validate">
+                            <span id="emailMessage"></span>
+                        </div>
+        
+                        <div class="md-form mb-4">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                            <input type="password" id="defaultForm-pass" class="form-control validate">
+                            <span id="passMessage"></span>
+                        </div>
+
+                        <span>Don't have an account yet? <span><a href="register.html">Register</a></span></span>
+        
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-default" id="modalLogIn" onclick="login()">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<br>
+		<br>
+		
+		<p class="apple" id="firstPara">We’re just normal folk who love great coffee. So much so that we decided to open up our own roastery and start roasting our own coffee here in GMIT, Galway campus! What makes us different is the fact that we are a micro roastery and we hand roast all our coffee with our very own hands. Being a mirco roastery also means we can provide you with the best personal service that will be tailored to you or your busines</p>
+		<h1>Open Your Mind</h1>
+		<br>
+		<div class="openingHrs" id="hours">
+			<h2>Monday - Friday</h2>
+			<h3> 6:30am - 6:30pm</h3>
+			<br>
+			<h2>Saturday<h2>
+			<h3>10:00am - 4:00pm</h3>
+		</div>
+		<br>
+		<br>
+		<h1>GREAT COFFEE, GOOD VIBRATIONS</h1>
+		<br>
+		<br>
+		<p class="apple">Featuring a varied selection of the best single origin espresso coffee, we are proudly stocked by Full Circle – the best local coffee roasters.
+
+			Dairy dodgers will be happy to discover a selection of 5 milk alternatives, including coconut, soy, bonsoy, almond and hemp.
+
+			Top quality local suppliers provide a range of pastries and healthy treats.
+
+			Relax and enjoy your coffee in our vintage surroundings with good honest friendly service and feel good tunes.</p>
+		<br>
+		<br>
+		<br>
+		
+		<!-- Bootstrap tags -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>
+
+<script>
+    function login() {
+        var uname = localStorage.getItem("regUsername");
+        var umail = localStorage.getItem("regEmail");
+        var passwrd = localStorage.getItem("regPassword");
+        var userEmail = document.getElementById("defaultForm-email").value;
+        var userPass = document.getElementById("defaultForm-pass").value;
+
+        checkEmail(userEmail, umail);
+        checkPass(userPass, passwrd);
+
+        if(checkEmail(userEmail, umail) == true && checkPass(userPass, passwrd) == true) {
+            $('#modalLoginForm').modal('hide')
+            document.getElementById("newName").innerHTML = "Welcome "+uname;
+        }
+    }
+
+    function checkEmail(userEmail, umail) {
+        if(userEmail == "") {
+            document.getElementById("emailMessage").innerHTML = "Please enter email";
+            document.getElementById("emailMessage").style.color = 'red';
+        }else if(userEmail != umail) {
+            document.getElementById("emailMessage").innerHTML = "Wrong email";
+            document.getElementById("emailMessage").style.color = 'red';
+        }else {
+            document.getElementById("emailMessage").innerHTML = "";
+            return true;
+        }
+    }
+
+    function checkPass(userPass, passwrd) {
+        if(userPass == "") {
+            document.getElementById("passMessage").innerHTML = "Please enter password";
+            document.getElementById("passMessage").style.color = 'red';
+        }else if(userPass != passwrd) {
+            document.getElementById("passMessage").innerHTML = "Wrong password";
+            document.getElementById("passMessage").style.color = 'red';
+        }else {
+            document.getElementById("passMessage").innerHTML = "";
+            return true;
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
