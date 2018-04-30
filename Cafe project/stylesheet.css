@@ -1,8 +1,5 @@
 body{
-	
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D */
-background: #83011f; /* Old browsers */
-
+background: #83011f;
 }
 
 ul.navBar {
@@ -74,6 +71,13 @@ box-sizing: border-box;
 border-radius: 0;
 }
 
+#modalLogIn {
+    border-radius: 10%;
+}
+#modalLogIn:hover {
+    background-color: #4CAF50;
+}
+
 li a:hover:not(.active), #login:hover {
 background-color: #ddd;
 text-decoration: underline;
@@ -122,8 +126,8 @@ font-size: 15px;
 width: 900px;
 height: 500px;
 display: block;
-margin-left: auto;
-margin-right: auto;
+margin: 0 auto 30px auto;
+border-radius: 1%;
 }
 
 #login, #user {
@@ -157,6 +161,61 @@ margin: 20px 0 20px 5px;
 display: block;
 margin: auto;
 border: 2px solid #4CAF50;
+border-radius: 1%;
+}
+
+.registerForm {
+    width: 30%;
+    min-width: 500px;
+    margin: auto;
+    border: 1px solid #303030;
+    border-radius: 1%;
+    box-shadow: 15px 15px 7px black;
+    background-color: white;
+    margin-top: 15%;
+}
+
+.headingReg {
+    display: block;
+    margin: auto;
+    width: 30%;
+    box-sizing: border-box;
+    font-size: 20pt;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.registerDetails .label {
+    margin: 0 0 20px 20%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.registerDetails input {
+    width: 60%;
+    margin: 0 20% 5px 20%;
+    box-sizing: border-box;
+}
+
+.submitReg {
+    width: 30%;
+    margin: 10px 35% 10px 35%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #a90329;
+}
+.submitReg:hover {
+    background-color: #4CAF50;
+}
+#btnLink {
+    text-decoration: none;
+    color: white;
+}
+
+.msg {
+    margin-left: 20%;
+    margin-bottom: 10px;
 }
 
 .bookingForm {
@@ -236,6 +295,99 @@ margin-top: 0;
 .btn-info, .btn-outline-info {
 border-radius: 10%;
 }
+
+#cart-icon {
+	width : 200px;
+	height : 200px;
+	margin-top : 150px;
+	
+}
+
+#add {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius : 50%;
+}
+
+#subtract {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius : 50%;
+}
+
+#delete {
+    background-color: #555555; /* Red */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+	
+}
+
+.popup img
+{
+border: 1px solid white;
+margin: 0 5px 5px 0;
+}
+
+.popup:hover
+{
+background-color: transparent;
+}
+
+.popup:hover img
+{
+border: 1px solid blue;
+}
+
+.popup span
+{ /*CSS for enlarged image*/
+position: absolute;
+background-color: beige;
+padding: 5px;
+left: -1000px;
+border: 1px dashed gray;
+visibility: hidden;
+color: black;
+text-decoration: none;
+}
+
+.popup span img
+{ /*CSS for enlarged image*/
+border-width: 0;
+padding: 2px;
+}
+
+.popup:hover span
+{ /*CSS for enlarged image*/
+visibility: visible;
+top: 0;
+left: 230px; /*position where enlarged image should offset horizontally */
+z-index: 50;
+}
+
+
 
 
 
