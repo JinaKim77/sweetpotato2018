@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- General Bootstrap tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		<link href="stylesheet.css" rel="stylesheet" type="text/css">
+		<title>Booking - JJA Cafe</title>
+	</head>
+	<body>
+		<img src="pics/logo.gif" alt="logo" class="logo">
+		<ul class="navBar">
+		<li><a class="btn active" href="cafe index.html">Home</a></li>
+		<li><a href="cafe booking.html" class="btn">Cafe Booking</a></li>
+		<li><a href="cafe shop.html" class="btn">Cafe Shop</a></li>
+        <li><a href="cafe index.html" class="btn">Opening Hours</a></li>
+        <li><a href="how to brew.html" class="btn">How to brew</a></li>
+		<li id="user"><a href="cafe user.html" class="btn">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
+		<li id="login"><a href="" class="btn" data-toggle="modal" data-target="#modalLoginForm">Log In</a></li>
+		</ul>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+                            <input type="email" id="defaultForm-email" class="form-control validate">
+                            <span id="emailMessage"></span>
+                        </div>
+        
+                        <div class="md-form mb-4">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+                            <input type="password" id="defaultForm-pass" class="form-control validate">
+                            <span id="passMessage"></span>
+                        </div>
+
+                        <span>Don't have an account yet? <span><a href="register.html">Register</a></span></span>
+        
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-default" id="modalLogIn" onclick="login()">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<img id="image" src="pics/love coffee.jpg" height="300px">
+		
+		<h1 id="topMargin">Make a free reservation</h1>
+		<h3 class="apple">Please select your preferred time and book here to complete your booking. For parties of 6 or more please call us directly on 123456789  Our reservation line is open between 2pm and 6pm Tuesday to Saturday.
+
+		Thank you and we look forward to seeing you soon.</h3>
+		
+		<div class="bookingForm">
+			<span class="heading">BOOKING DETAILS</span>
+			<form class="bookingDetails" id="booking_form">
+                <span class="infoTag">Contact Name*</span><input type="text" placeholder="John Smith" id="name" maxlength="20" required>
+                <span id="nameMessage"></span> <br>
+                
+                <span class="infoTag">Contact Number*</span><input type="tel" maxlength="10" placeholder="0871235555" id="phNumber" required> 
+                <span id="numberMessage"></span> <br>
+
+                <span class="infoTag">Date*</span><input type="date" id="date" required>
+                <span id="dateMessage"></span> <br>
+                
+                <span class="infoTag">Time*</span><input type="time" id="time" required>
+                <span id="timeMessage"></span> <br>
+                
+                <span class="infoTag">Number of Guests*</span><input type="number" placeholder="4" id="guests" required>
+                <span id="guestsMessage"></span> <br>
+                
+				<button type="button" id="submit" onclick="saveDetails()">Submit</button>
+			</form>
+		</div>
+		
+		<p id="message"></p>
+		
+		<a id="backButton" href="cafe index.html">[Back to home page]</a>
+		
+		<!-- Bootstrap tags -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>
+
+<script>
+	function saveDetails() {
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phNumber").value;
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+        var guests = document.getElementById("guests").value;
+
+        nameValidate(name);
+        phoneValidate(phone);
+        timeValidate(date, time);
+        validDate(date);
+		guestsValidate(guests);
+
+        if(nameValidate(name) == true && phoneValidate(phone) == true && timeValidate(time) == true &&  validDate(date) == true && guestsValidate(guests) == true) {
+            sessionStorage.userBookingName = name;
+            sessionStorage.userBookingPhoneNumber = phone;
+            sessionStorage.userBookingTime = time;
+            sessionStorage.userBookingDate = date;
+            sessionStorage.userBookingGuests = guests;
+            document.getElementById("message").innerHTML = "Booking successful!<br/>Thank you "+name+", you have booked a place at our cafe for "+date+" @ "+time+" for "+guests+" people. In case of any issues we will contact you at "+phone;
+            document.getElementById("message").style.color = '#008e1e';
+            document.getElementById("booking_form").reset();
+        }else {
+            document.getElementById("message").innerHTML = "Booking unsuccessful. Please check your info";
+            document.getElementById("message").style.color = 'orange';
+        }
+	}
+
+    function nameValidate(name) {  
+        if(name == "") {
+            document.getElementById("nameMessage").innerHTML = "Name can't be empty";
+            document.getElementById("nameMessage").style.color = 'red';
+        }else {
+            document.getElementById("nameMessage").innerHTML = "";
+            return true;
+        }
+    }
+
+    function phoneValidate(phone) {  
+        if(phone == "") {
+            document.getElementById("numberMessage").innerHTML = "Need to enter phone number";
+            document.getElementById("numberMessage").style.color = 'red';
+        }else {
+            document.getElementById("numberMessage").innerHTML = "";
+            return true;
+        }
+    }
+
+    function validDate(date) {
+        todayDate = getTodaysDate();
+        
+        if (date === '') {
+            document.getElementById("dateMessage").innerHTML = "Need to pick date";
+            document.getElementById("dateMessage").style.color = 'red';
+        }else if (date < todayDate) {
+            document.getElementById("dateMessage").innerHTML = "Invalid date. You can't book for the past";
+            document.getElementById("dateMessage").style.color = 'red';
+        }else {
+            document.getElementById("dateMessage").innerHTML = "";
+            return true;
+        }
+    }
+
+	function getTodaysDate() {
+		date = new Date();
+		day = date.getDate();
+		month = date.getMonth() + 1;
+		year = date.getFullYear();
+
+		if (month < 10) month = "0" + month;
+		if (day < 10) day = "0" + day;
+
+		today = year+"-"+month+"-"+day; 
+
+		return today;
+	}
+
+    function timeValidate(date, time) {
+        var hours = [
+            // Sunday
+            false,
+            // Monday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Tuesday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Wednesday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Thursday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Friday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Saturday
+            {
+                open: '10:00',
+                close: '16:00'
+            }
+        ];
+
+        var chosenDate = new Date(date);
+        var day = chosenDate.getDay();
+
+        if(time == '') {
+            document.getElementById("timeMessage").innerHTML = "Please choose a time";
+            document.getElementById("timeMessage").style.color = 'red';
+        }else {
+            switch(day) {
+                case 0:
+                    document.getElementById("timeMessage").innerHTML = "Sorry we are closed on Sundays";
+                    document.getElementById("timeMessage").style.color = 'red';
+                    break;
+                case 1:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Mondays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Mondays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 2:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Tuesdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Tuesdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 3:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Wednesdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Wednesdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 4:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Thursdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Thursdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 5:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Fridays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Fridays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 6:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 16:00 on Saturdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 10:00 on Saturdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                default:
+                    document.getElementById("timeMessage").innerHTML = "";
+                    return true;
+            }//switch
+        }//if/else
+    }
+
+    function guestsValidate(guests) {
+        if(guests > 5) {
+			document.getElementById("guestsMessage").innerHTML = "For 6 or more guests please call us directly at 123456789. Thank you";
+			document.getElementById("guestsMessage").style.color = 'red';
+		}else if (guests < 1) {
+			document.getElementById("guestsMessage").innerHTML = "You need to book a place for at least one person";
+			document.getElementById("guestsMessage").style.color = 'red';
+        }else {
+            document.getElementById("guestsMessage").innerHTML = "";
+            return true;
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
