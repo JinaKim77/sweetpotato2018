@@ -8,16 +8,40 @@
 		
 		<link href="stylesheet.css" rel="stylesheet" type="text/css">
 		<title>Shop - JJA Cafe</title>
+		<style>
+		body {margin:0;}
+	
+		.menubar {
+		overflow: hidden;
+		background-color: brown;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		}
+
+		.menubar a {
+		float: left;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		}
+		</style>
 	</head>
 	<body>
 		<ul>
-		<li><a class="active" href="cafe index.html">Home</a></li>
-		<li><a href="cafe booking.html">Cafe Booking</a></li>
-		<li><a href="cafe shop.html">Cafe Shop</a></li>
-		<li><a href="cafe index.html">Opening hours</a></li>
-		<li id="user"><a href="cafe user.html">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
-		<li id="login"><button class="logInLink"><a href="">Log In</a></button></li>
+			<div class="menubar">
+			<li><a class="active" href="cafe index.html">Home</a></li>
+			<li><a href="cafe booking.html">Cafe Booking</a></li>
+			<li><a href="cafe shop.html">Buy Coffee From Us</a></li>
+			<li><a href="cafe index.html#hours">Opening hours</a></li>
+			<li><a href="how to brew.html">How to brew</a></li>
+			<li id="user"><a href="cafe user.html">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
+			<li id="login"><button class="logInLink"><a href="">Log In</a></button></li>
 		</ul>
+		</div>
 		<div id="pic">	
 			<img src="pics/1234.jpg" alt="picture" width="100%" height="300">
 		</div>
@@ -25,7 +49,6 @@
 		
 		
 		
-		<p>Hey Jakub and Alex, we might put some info how to make coffee this page, what you think? have to put some coffee pics for selling too</p>
 		
 		<a id="backButton" href="cafe index.html">[Back to home page]</a>
 		

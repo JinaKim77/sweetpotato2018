@@ -8,17 +8,41 @@
 		
 		<link href="stylesheet.css" rel="stylesheet" type="text/css">
 		<title>Home - JJA Cafe</title>
+	<style>
+		body {margin:0;}
+	
+		.menubar {
+		overflow: hidden;
+		background-color: brown;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		}
+
+		.menubar a {
+		float: left;
+		display: block;
+		color: darkbrown;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		}
+	
+	</style>
 	</head>
 	<body>
 		<ul>
+			<div class="menubar">
 			<li><a class="active" href="cafe index.html">Home</a></li>
 			<li><a href="cafe booking.html">Cafe Booking</a></li>
 			<li><a href="cafe shop.html">Buy Coffee From Us</a></li>
-			<li><a href="cafe index.html">Opening hours</a></li>
+			<li><a href="cafe index.html#hours">Opening hours</a></li>
+			<li><a href="how to brew.html">How to brew</a></li>
 			<li id="user"><a href="cafe user.html">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
 			<li id="login"><button class="logInLink"><a href="">Log In</a></button></li>
 		</ul>
-		
+		</div>
 		
 		<h1 class="font">JJA Cafe</h1>
 		<!-- <img src="pics/coffeebean.png" alt="coffeebean.png" width="700" height="500"> -->
@@ -40,14 +64,18 @@
 		<br>
 		
 		<p class="apple">We’re just normal folk who love great coffee. So much so that we decided to open up our own roastery and start roasting our own coffee here in GMIT, Galway campus! What makes us different is the fact that we are a micro roastery and we hand roast all our coffee with our very own hands. Being a mirco roastery also means we can provide you with the best personal service that will be tailored to you or your busines</p>
+		<p id="hours"></p>
+		<br>
+		<br>
 		<h1>Open Your Mind</h1>
 		<br>
-		<div class="openingHrs">
-			<h2>Monday - Friday</h2>
-			<h3> 6:30am - 6:30pm</h3>
+		<div class="openingHrs"> 
+		
+			<h1>Monday - Friday</h1>
+			<h2> 6:30am - 6:30pm</h2>
 			<br>
-			<h2>Saturday<h2>
-			<h3>10:00am - 4:00pm</h3>
+			<h1>Saturday<h1>
+			<h2>10:00am - 4:00pm</h2>
 		</div>
 		<br>
 		<br>
@@ -71,6 +99,8 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		
+		<embed src="Torments_of_my_life_-_The_sun_gives.mp3" autostart="true" loop="false" width="2" length="0"></embed>
 	</body>
 </html>
 
