@@ -31,6 +31,7 @@
 		</style>
 	</head>
 	<body>
+<<<<<<< HEAD
 		<ul>
 			<div class="menubar">
 			<li><a class="active" href="cafe index.html">Home</a></li>
@@ -40,8 +41,116 @@
 			<li><a href="how to brew.html">How to brew</a></li>
 			<li id="user"><a href="cafe user.html">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
 			<li id="login"><button class="logInLink"><a href="">Log In</a></button></li>
+=======
+		<img src="pics/logo.gif" alt="logo" class="logo">
+		<ul class="navBar">
+		<li><a class="btn active" href="cafe index.html">Home</a></li>
+		<li><a href="cafe booking.html" class="btn">Cafe Booking</a></li>
+		<li><a href="cafe shop.html" class="btn">Cafe Shop</a></li>
+		<li><a href="cafe index.html" class="btn">Opening Hours</a></li>
+		<li id="user"><a href="cafe user.html" class="btn">User <!--Will change from User to *Username* through innerHTML when log in details entered--> </a></li>
+		<li id="login"><a href="" class="btn" data-toggle="modal" data-target="#modalLRForm">Log In</a></li>
+>>>>>>> 8306d83ff60a312c9f334eb063e233f1e6de4b62
 		</ul>
 		</div>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i> Register</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body mb-1">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+                            </div>
+                            <div class="text-center mt-2">
+                                <button class="btn btn-info">Log in <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                                <button class="btn btn-info">Sign up <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-right">
+                                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
 		
 		<img id="image" src="pics/love coffee.jpg" height="300px">
 		
@@ -52,12 +161,22 @@
 		
 		<div class="bookingForm">
 			<span class="heading">BOOKING DETAILS</span>
-			<form class="bookingDetails">
-				<span class="infoTag">Time*</span><input type="time" id="time" required> <br>
-				<span class="infoTag">Date*</span><input type="date" id="date" oninput="validDate(date)" required> <br>
-				<span class="infoTag">Contact Name*</span><input type="text" placeholder="John Smith" id="name" required> <br>
-				<span class="infoTag">Contact Number*</span><input type="text" placeholder="123456789" id="phNumber" required> <br>
-				<span class="infoTag">Number of Guests*</span><input type="number" placeholder="4" id="guests" required> <br>
+			<form class="bookingDetails" id="booking_form">
+                <span class="infoTag">Contact Name*</span><input type="text" placeholder="John Smith" id="name" maxlength="20" required>
+                <span id="nameMessage"></span> <br>
+                
+                <span class="infoTag">Contact Number*</span><input type="tel" maxlength="10" placeholder="0871235555" id="phNumber" required> 
+                <span id="numberMessage"></span> <br>
+
+                <span class="infoTag">Date*</span><input type="date" id="date" required>
+                <span id="dateMessage"></span> <br>
+                
+                <span class="infoTag">Time*</span><input type="time" id="time" required>
+                <span id="timeMessage"></span> <br>
+                
+                <span class="infoTag">Number of Guests*</span><input type="number" placeholder="4" id="guests" required>
+                <span id="guestsMessage"></span> <br>
+                
 				<button type="button" id="submit" onclick="saveDetails()">Submit</button>
 			</form>
 		</div>
@@ -75,29 +194,70 @@
 
 <script>
 	function saveDetails() {
-		if(document.getElementById("guests").value > 5) {
-			document.getElementById("message").innerHTML = "For 6 or more guests please call us directly at 123456789. Thank you";
-			document.getElementById("message").style.color = 'red';
-		}else if (document.getElementById("guests").value < 1) {
-			document.getElementById("message").innerHTML = "You need to book a place for at least one person";
-			document.getElementById("message").style.color = 'red';
-		}else {
-			localStorage.userBookingTime = document.getElementById("time").value;
-			localStorage.userBookingDate = document.getElementById("date").value;
-			localStorage.userBookingName = document.getElementById("name").value;
-			localStorage.userBookingPhoneNumber = document.getElementById("phNumber").value;
-			localStorage.userBookingGuests = document.getElementById("guests").value;
-			document.getElementById("message").innerHTML = "Booking successful. See you later ;)";
-			document.getElementById("message").style.color = '#008e1e';
-		}
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phNumber").value;
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+        var guests = document.getElementById("guests").value;
+
+        nameValidate(name);
+        phoneValidate(phone);
+        timeValidate(date, time);
+        validDate(date);
+		guestsValidate(guests);
+
+        if(nameValidate(name) == true && phoneValidate(phone) == true && timeValidate(time) == true &&  validDate(date) == true && guestsValidate(guests) == true) {
+            sessionStorage.userBookingName = name;
+            sessionStorage.userBookingPhoneNumber = phone;
+            sessionStorage.userBookingTime = time;
+            sessionStorage.userBookingDate = date;
+            sessionStorage.userBookingGuests = guests;
+            document.getElementById("message").innerHTML = "Booking successful!<br/>Thank you "+name+", you have booked a place at our cafe for "+date+" @ "+time+" for "+guests+" people. In case of any issues we will contact you at "+phone;
+            document.getElementById("message").style.color = '#008e1e';
+            document.getElementById("booking_form").reset();
+        }else {
+            document.getElementById("message").innerHTML = "Booking unsuccessful. Please check your info";
+            document.getElementById("message").style.color = 'orange';
+        }
 	}
-	
-	function validDate(date) {
-    todayDate = getTodaysDate();
-    if (date < todayDate)
-        document.getElementById("message").innerHTML = "Invalid date. You can't book for the past";
-		document.getElementById("message").style.color = 'red';
-	}
+
+    function nameValidate(name) {  
+        var ok = true;
+
+        if(name == "") {
+            document.getElementById("nameMessage").innerHTML = "Name can't be empty";
+            document.getElementById("nameMessage").style.color = 'red';
+        }else {
+            return ok;
+        }
+    }
+
+    function phoneValidate(phone) {  
+        var ok = true;
+
+        if(phone == "") {
+            document.getElementById("numberMessage").innerHTML = "Need to enter phone number";
+            document.getElementById("numberMessage").style.color = 'red';
+        }else {
+            return ok;
+        }
+    }
+
+    function validDate(date) {
+        var ok = true;
+
+        todayDate = getTodaysDate();
+        
+        if (date === '') {
+            document.getElementById("dateMessage").innerHTML = "Need to pick date";
+            document.getElementById("dateMessage").style.color = 'red';
+        }else if (date < todayDate) {
+            document.getElementById("dateMessage").innerHTML = "Invalid date. You can't book for the past";
+            document.getElementById("dateMessage").style.color = 'red';
+        }else {
+            return ok;
+        }
+    }
 
 	function getTodaysDate() {
 		date = new Date();
@@ -108,10 +268,133 @@
 		if (month < 10) month = "0" + month;
 		if (day < 10) day = "0" + day;
 
-		today = year + "-" + month + "-" + day; 
+		today = year+"-"+month+"-"+day; 
 
 		return today;
 	}
+
+    function timeValidate(date, time) {
+        var hours = [
+            // Sunday
+            false,
+            // Monday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Tuesday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Wednesday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Thursday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Friday
+            {
+                open: '06:30',
+                close: '18:30'
+            },
+            // Saturday
+            {
+                open: '10:00',
+                close: '16:00'
+            }
+        ];
+
+        var chosenDate = new Date(date);
+        var day = chosenDate.getDay();
+        var ok = true;
+
+        if(time == '') {
+            document.getElementById("timeMessage").innerHTML = "Please choose a time";
+            document.getElementById("timeMessage").style.color = 'red';
+        }else {
+            switch(day) {
+                case 0:
+                    document.getElementById("timeMessage").innerHTML = "Sorry we are closed on Sundays";
+                    document.getElementById("timeMessage").style.color = 'red';
+                    break;
+                case 1:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Mondays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Mondays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 2:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Tuesdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Tuesdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 3:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Wednesdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Wednesdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 4:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Thursdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Thursdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 5:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 18:30 on Fridays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 6:30 on Fridays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                case 6:
+                    if(time >= hours[day].close) {
+                        document.getElementById("timeMessage").innerHTML = "We close at 16:00 on Saturdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }else if (time <= hours[day].open){
+                        document.getElementById("timeMessage").innerHTML = "We open at 10:00 on Saturdays";
+                        document.getElementById("timeMessage").style.color = 'red';
+                    }
+                    break;
+                default:
+                    return ok;
+            }//switch
+        }//if/else
+    }
+
+    function guestsValidate(guests) {
+        var ok = true;
+
+        if(guests > 5) {
+			document.getElementById("guestsMessage").innerHTML = "For 6 or more guests please call us directly at 123456789. Thank you";
+			document.getElementById("guestsMessage").style.color = 'red';
+		}else if (guests < 1) {
+			document.getElementById("guestsMessage").innerHTML = "You need to book a place for at least one person";
+			document.getElementById("guestsMessage").style.color = 'red';
+        }else {
+            return ok;
+        }
+    }
 </script>
 
 
